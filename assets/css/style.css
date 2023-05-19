@@ -112,6 +112,12 @@ header .grid-layout nav .nav-list {
 header .grid-layout nav .nav-list li {
     margin-left: 48px
 }
+@media screen and (max-width: 500px) {
+    .small-repo-card{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 992px) {
     header .grid-layout nav .nav-list li {
