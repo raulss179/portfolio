@@ -776,21 +776,21 @@ justify-content: center;
 }
   .repo-card {
     background:transparent;
-    color:#6e50b5 ;
+    color:white ;
     border-radius: 8px;
     flex-direction: row ;
     justify-content:center;
     word-wrap: break-word;
     text-align: center;
     text;
-    width: 210px;
+    width: 250px;
     transform: translate(0);
     overflow: hidden;
-    height: 200px;
+    height: 300px;
     margin: 60px 20px;
     display: inline-block;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 4px solid #237AD9;
     margin-bottom: 10px;
   }
   .repo-card::before {
@@ -814,10 +814,12 @@ justify-content: center;
     color: #6e50b5;
     height: 25px;
     margin-bottom: 25px;
+    padding-top: 20px;
   }
   .repo-description{
+    padding-top: 50px;
     margin-bottom: 50px;
-    height: 50px;
+    height: 130px;
   }
   a.repo-button{
     font-size:20px;
@@ -832,20 +834,35 @@ justify-content: center;
     display: flex;
     flex-direction: row;
   }
-  .small-repo-card{
+  .small-repo-card-1{
     padding-top: 10px;
     border: 1px solid white;
     width: 200px;
     border-radius: 8px;
-    height: 150px;
-    margin-top: 75px;
-    margin-right: 23px;
-    margin-left: 23px;
+    height: 200px;
+    margin-top: 110px;
+    margin-right: -40px;
+    background: linear-gradient(to left);
+
+  } 
+  .small-repo-card{
+    padding-top: 10px;
+    border: 2px solid white;
+    width: 200px;
+    border-radius: 8px;
+    height: 200px;
+    margin-top: 110px;
+    margin-left: -40px;
+
+
 
   } 
   .small-repo-card a{
     display: none;
 
+  }
+  .small-repo-card-1 a {
+    display: none;
   }
   .repo-card{
 
