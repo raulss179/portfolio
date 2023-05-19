@@ -85,6 +85,11 @@ header.hidden{
         padding: 0px 24px
     }
 }
+@media screen and (max-width: 500px) {
+.edit nav a i{
+    font-size: 15px;
+}
+}
 
 header .grid-layout nav {
     display: flex;
