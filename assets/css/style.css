@@ -875,6 +875,16 @@ justify-content: center;
     color: wheat;
     font-size: 15px;
   }
+  @media screen and (max-width:650px){
+    .small-repo-card{ display: none;
+
+    }
+    .small-repo-card-1{ display: none;
+
+    }
+  } 
+    
+  
  .prev-button,.next-button{
 
     color: #42ab9e;
