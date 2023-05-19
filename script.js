@@ -1,14 +1,34 @@
 var prevScrollpos = window.pageYOffset;
+var header = document.querySelector("header");
+var isMenuFixed = false;
 
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
+
   if (prevScrollpos > currentScrollPos) {
-    document.querySelector("header").classList.remove("hidden");
+    // Rolagem para cima
+    header.classList.remove("hidden");
+    isMenuFixed = false;
   } else {
-    document.querySelector("header").classList.add("hidden");
+    // Rolagem para baixo
+    header.classList.add("hidden");
+    isMenuFixed = true;
   }
+
+  // Verifica se voltou ao topo da página
+  if (currentScrollPos === 0) {
+    header.classList.remove("hidden");
+    isMenuFixed = false;
+  }
+
+  // Verifica se o menu está fixo na tela e volta a mostrar caso a rolagem seja interrompida
+  if (isMenuFixed && currentScrollPos === prevScrollpos) {
+    header.classList.remove("hidden");
+  }
+
   prevScrollpos = currentScrollPos;
-}
+};
+
 
 //RECUPERANDO REPOSITORIO DO GITHUB DINAMICAMENTE
 
