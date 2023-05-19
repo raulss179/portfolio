@@ -95,7 +95,7 @@ header .grid-layout nav {
     padding: 0px 8px
 }
 .edit nav a i{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 header .grid-title a {
@@ -298,7 +298,7 @@ header .grid-layout nav .nav-list li a:hover {
 }
 
 #s-home .grid-layout #home #home-container-text a {
-    background: #986dff;
+    background: white;
     color:#fff;
     backdrop-filter: blur(10px);
     padding: 15px 10px;
