@@ -36,7 +36,7 @@ fetch(url)
       repoContainer.innerHTML = ''; // Limpa o container
 
       // Exibe o repositório anterior
-      const prevRepoCard = createRepoCard(prevRepo, 'small-repo-card');
+      const prevRepoCard = createRepoCard(prevRepo, 'small-repo-card-1');
       repoContainer.appendChild(prevRepoCard);
 
       // Exibe o repositório central (atual)
