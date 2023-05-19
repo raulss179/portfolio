@@ -13,20 +13,44 @@ window.onscroll = function() {
 //RECUPERANDO REPOSITORIO DO GITHUB DINAMICAMENTE
 
 const username = "Raulss179";
+const excludedRepo = "nome-do-repositorio"; // Substitua pelo nome do repositório a ser excluído
 const url = `https://api.github.com/users/${username}/repos`;
 
 fetch(url)
   .then(response => response.json())
   .then(data => {
-    const repoList = document.getElementById('repo-list');
-    
-    const maxRepos = 6; // Número máximo de repositórios a serem exibidos
+    const filteredData = data.filter(repo => repo.name !== excludedRepo); // Filtra os repositórios para excluir o repositório especificado
 
-    for (let i = 0; i < data.length && i < maxRepos; i++) {
-      const repo = data[i];
+    const repoContainer = document.getElementById('repo-container');
 
+    let currentRepoIndex = 1; // Índice do repositório central exibido no carrossel
+
+    function displayRepos() {
+      const prevRepoIndex = (currentRepoIndex - 1 + filteredData.length) % filteredData.length; // Índice do repositório anterior
+      const nextRepoIndex = (currentRepoIndex + 1) % filteredData.length; // Índice do próximo repositório
+
+      const prevRepo = filteredData[prevRepoIndex];
+      const currentRepo = filteredData[currentRepoIndex];
+      const nextRepo = filteredData[nextRepoIndex];
+
+      repoContainer.innerHTML = ''; // Limpa o container
+
+      // Exibe o repositório anterior
+      const prevRepoCard = createRepoCard(prevRepo, 'small-repo-card');
+      repoContainer.appendChild(prevRepoCard);
+
+      // Exibe o repositório central (atual)
+      const currentRepoCard = createRepoCard(currentRepo, 'repo-card');
+      repoContainer.appendChild(currentRepoCard);
+
+      // Exibe o próximo repositório
+      const nextRepoCard = createRepoCard(nextRepo, 'small-repo-card');
+      repoContainer.appendChild(nextRepoCard);
+    }
+
+    function createRepoCard(repo, cardClass) {
       const repoCard = document.createElement('div');
-      repoCard.classList.add('repo-card');
+      repoCard.classList.add(cardClass);
 
       const repoName = document.createElement('h3');
       repoName.classList.add('repo-name');
@@ -45,20 +69,27 @@ fetch(url)
       repoCard.appendChild(repoName);
       repoCard.appendChild(repoDesc);
       repoCard.appendChild(repoButton);
-      repoList.appendChild(repoCard);
+
+      return repoCard;
     }
 
-    // Adicionar botão "Ver Mais" se houver mais repositórios
-    if (data.length > maxRepos) {
-      const verMaisButton = document.createElement('button');
-      verMaisButton.classList.add('ver-mais-button');
-      verMaisButton.textContent = "Ver Mais";
-      verMaisButton.addEventListener('click', () => {
-        // Redirecionar para a página com todos os repositórios
-        window.location.href = `https://github.com/${username}?tab=repositories`;
-      });
-      repoList.appendChild(verMaisButton);
+    function showNextRepo() {
+      currentRepoIndex = (currentRepoIndex + 1) % filteredData.length; // Incrementa o índice considerando o tamanho do array
+      displayRepos();
     }
+
+    function showPreviousRepo() {
+      currentRepoIndex = (currentRepoIndex - 1 + filteredData.length) % filteredData.length; // Decrementa o índice considerando o tamanho do array
+      displayRepos();
+    }
+
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+
+    prevButton.addEventListener('click', showPreviousRepo);
+    nextButton.addEventListener('click', showNextRepo);
+
+    displayRepos();
   })
   .catch(error => {
     console.error("Erro ao obter os repositórios do GitHub:", error);

@@ -236,15 +236,27 @@
             </article>
           </div>
   <div class="Rep-git">Repositórios do GitHub</div>
-  <div class="repo-list" id="repo-list">
     <!-- Quadro para cada repositório -->
-    <div class="repo-card">
+    <div class="repo-list" id="repo-list">
+
+
+       
       <div><h3 class="repo-name"></h3></div>
       <div><p class="repo-description"></p></div>
-      <div><a class="repo-button" href="#" target="_blank">Visitar Repositório</a></div>
+      <div class="prev-button" id="prev-button"><i class="fa-solid fa-backward" style="color: #42ab9e;"></i></div>
+      <div class="repo-container" id="repo-container">
+          <div class="small-repo-card">
+            <!-- Conteúdo do repositório antes -->
+          </div>
+          <div class="repo-card">
+            <!-- Conteúdo do repositório central -->
+          </div>
+          <div class="small-repo-card">
+            <!-- Conteúdo do próximo repositório -->
+          </div>
+        </div>
+      <div class="next-button" id="next-button"><i class="fa-solid fa-forward" style="color: #42ab9e;"></i></div>
     </div>
-  </div>
-
             <script src="script.js"></script>
         </div>
       </section>

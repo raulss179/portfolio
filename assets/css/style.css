@@ -752,7 +752,7 @@ header .grid-layout nav .nav-list li a:hover {
 }
 .Rep-git{
     margin-top: 60px;
-    font-size: 40px;
+    font-size: 30px;
     color:white ;
     font-weight: bold ;
 }
@@ -817,6 +817,29 @@ justify-content: center;
     margin-bottom:2px;
     border-radius: 8px;
   }
+  .repo-container{
+    display: flex;
+    flex-direction: row;
+  }
+  .small-repo-card{
+    padding-top: 10px;
+    border: 1px solid white;
+    width: 200px;
+    border-radius: 8px;
+    height: 150px;
+    margin-top: 75px;
+    margin-right: 23px;
+    margin-left: 23px;
+
+  } 
+  .small-repo-card a{
+    display: none;
+
+  }
+  .repo-card{
+
+
+  }
   
   .repo-description {
     margin-top: 15px;
@@ -824,12 +847,16 @@ justify-content: center;
     color: wheat;
     font-size: 15px;
   }
-  .ver-mais-button{
-    width: 100px;
-    height: 33px;
-    margin-top: 350px
-  }
-  
+ .prev-button,.next-button{
+
+    color: #42ab9e;
+    font-size: 30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+ }
 
 #s-services {
     padding: 96px 48px;
