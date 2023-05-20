@@ -1,6 +1,13 @@
 var prevScrollpos = window.pageYOffset;
 var header = document.querySelector("header");
 
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+    }, 0);
+  });
+  
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
 
