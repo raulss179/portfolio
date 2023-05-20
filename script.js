@@ -12,18 +12,16 @@ window.onscroll = function() {
     header.classList.add("hidden");
   }
 
-  prevScrollpos = currentScrollPos;
-
-  // Verifica se voltou ao topo da página
-  if (currentScrollPos === 0) {
-    header.classList.remove("hidden");
-  }
-};
-
-window.onload = function() {
-  window.scrollTo(0, 0);
-};
-
+  window.onload = function() {
+    var sectionHome = document.getElementById('s-home');
+  
+    if (sectionHome) {
+      var sectionOffsetTop = sectionHome.offsetTop;
+      window.scrollTo(0, sectionOffsetTop);
+    }
+  };
+}
+  
 
 
 //RECUPERANDO REPOSITORIO DO GITHUB DINAMICAMENTE
