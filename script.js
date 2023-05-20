@@ -20,6 +20,11 @@ window.onscroll = function() {
   }
 };
 
+window.onload = function() {
+  window.scrollTo(0, 0);
+};
+
+
 
 //RECUPERANDO REPOSITORIO DO GITHUB DINAMICAMENTE
 

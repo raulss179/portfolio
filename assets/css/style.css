@@ -776,6 +776,7 @@ justify-content: center;
 
 }
   .repo-card {
+    flex-basis: calc(100% - 20px);
     transition: 3s all ease;
     background:transparent;
     color:white ;
@@ -952,8 +953,8 @@ justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
-    #s-services .grid-layout #services article {
-        flex-basis: calc(100% - 20px)
+    #s-services .grid-layout #services article {flex-basis: calc(100% - 20px)
+        
     }
 }
 
