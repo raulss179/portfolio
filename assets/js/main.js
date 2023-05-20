@@ -6,7 +6,7 @@ import { menu } from "./menu.js";
 
 menu();
 initScrollReveal();
-typeWrite(document.querySelector(".home-container-text"));
+typeWrite(document.querySelector(".typewriter"));
 
 hoverChangeExperience(
   ".digitalhouse",
