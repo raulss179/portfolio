@@ -13,8 +13,19 @@ window.onscroll = function() {
   }
 
   prevScrollpos = currentScrollPos;
+     // Verifica se voltou ao topo da página
+ if (currentScrollPos === 0) {
+  header.classList.remove("hidden");
+}
+};
 
- 
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+    }, 0);
+  });
+
+
 
 
 //RECUPERANDO REPOSITORIO DO GITHUB DINAMICAMENTE
@@ -100,9 +111,4 @@ fetch(url)
   })
   .catch(error => {
     console.error("Erro ao obter os repositórios do GitHub:", error);
-  });
- // Verifica se voltou ao topo da página
- if (currentScrollPos === 0) {
-  header.classList.remove("hidden");
-}
-};
+  })
