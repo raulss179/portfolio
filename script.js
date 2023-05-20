@@ -13,17 +13,24 @@ window.onscroll = function() {
   }
 
   prevScrollpos = currentScrollPos;
-     // Verifica se voltou ao topo da página
- if (currentScrollPos === 0) {
-  header.classList.remove("hidden");
-}
+  
+  // Verifica se voltou ao topo da página
+  if (currentScrollPos === 0) {
+    header.classList.remove("hidden");
+  }
 };
 
-  window.addEventListener('load', function() {
-    setTimeout(function() {
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var homeSection = document.getElementById('s-home');
+    if (homeSection) {
+      var topOffset = homeSection.offsetTop;
+      window.scrollTo(0, topOffset);
+    } else {
       window.scrollTo(0, 0);
-    }, 0);
-  });
+    }
+  }, 0);
+});
 
 
 
