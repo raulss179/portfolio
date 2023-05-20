@@ -106,7 +106,3 @@ fetch(url)
   header.classList.remove("hidden");
 }
 };
-
-window.onload = function() {
-window.scrollTo(0, 0);
-};
