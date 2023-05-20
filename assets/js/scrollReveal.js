@@ -1,6 +1,6 @@
 export function initScrollReveal() {
   const sr = ScrollReveal({
-    origin: "top",
+    origin: "1px",
     distance: "50px",
     duration: 2000,
   });
