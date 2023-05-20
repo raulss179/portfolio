@@ -31,6 +31,25 @@ window.addEventListener('load', function() {
     }
   }, 0);
 });
+//correção do erro de carregamento da pagina
+window.addEventListener('beforeunload', function() {
+  window.scrollTo(0, 0);
+});
+
+// Armazena a posição de rolagem atual no histórico do navegador
+window.addEventListener('beforeunload', function() {
+  sessionStorage.setItem('scrollPosition', window.pageYOffset);
+});
+
+// Restaura a posição de rolagem armazenada ao carregar a página
+window.addEventListener('load', function() {
+  var scrollPosition = sessionStorage.getItem('scrollPosition');
+  if (scrollPosition) {
+    setTimeout(function() {
+      window.scrollTo(0, scrollPosition);
+    }, 0);
+  }
+});
 
 
 
