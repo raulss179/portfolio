@@ -785,7 +785,7 @@ justify-content: center;
     justify-content:center;
     word-wrap: break-word;
     text-align: center;
-    width: 280px;
+    width: 290px;
     transform: translate(0);
     overflow: hidden;
     height: 450px;
@@ -841,9 +841,9 @@ justify-content: center;
   .small-repo-card-1{
     padding-top: 10px;
     border: 1px solid white;
-    width: 200px;
+    width: 300px;
     border-radius: 8px;
-    height: 200px;
+    height: 350px;
     margin-top: 110px;
     margin-right: -40px;
     background: linear-gradient(to left);
@@ -852,9 +852,9 @@ justify-content: center;
   .small-repo-card{
     padding-top: 10px;
     border: 2px solid white;
-    width: 200px;
+    width: 300px;
     border-radius: 8px;
-    height: 200px;
+    height: 350px;
     margin-top: 110px;
     margin-left: -40px;
 
