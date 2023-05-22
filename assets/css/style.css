@@ -90,7 +90,12 @@ header.hidden{
     font-size: 15px;
 }
 }
-
+@media screen and (max-width: 350px) {
+.repo-card{
+    display:inline-block;
+}
+    
+}
 header .grid-layout nav {
     display: flex;
     justify-content: space-between;
@@ -767,14 +772,7 @@ header .grid-layout nav .nav-list li a:hover {
     font-size: 30px;
     color:white ;
     font-weight: bold ;
-}
-.repo-list{
-display: flex;
-flex-wrap: wrap;
-justify-content: flex-start;
-justify-content: center;
-
-}
+};
   .repo-card {
     flex-basis: calc(100% - 20px);
     transition: 3s all ease;
@@ -782,14 +780,14 @@ justify-content: center;
     color:white ;
     border-radius: 8px;
     flex-direction: row ;
-    justify-content:center;
+    justify-content:scenter;
     word-wrap: break-word;
     text-align: center;
-    width: 300px;
+    width: 260px;
     transform: translate(0);
     overflow: hidden;
     height: 450px;
-    margin: 60px 20px;
+    margin: 20px 5px !important;
     display: inline-block;
     padding: 10px;
     border: 3px solid #42AB9E;
@@ -797,7 +795,7 @@ justify-content: center;
   }
   .repo-card::before {
     content: "";
-    width: 8px;
+    width: 10px;
     top: 0;
     bottom: 0;
     left: -32px;
@@ -833,11 +831,7 @@ justify-content: center;
     padding: 5px 8px;
     margin-bottom:2px;
     border-radius: 8px;
-  }
-  .repo-container{
-    display: flex;
-    flex-direction: row;
-  }
+  };
   .small-repo-card-1{
     padding-top: 10px;
     border: 1px solid white;
@@ -858,9 +852,10 @@ justify-content: center;
     margin-top: 110px;
     margin-left: -40px;
 
-
-
   } 
+  .display-mobile{
+    display: none;
+  }
   .small-repo-card a{
     display: none;
 
@@ -885,16 +880,24 @@ justify-content: center;
   } 
     
   
- .prev-button,.next-button{
-
+ .prev-button{
+    margin-top: 40px;
+    height: 30px;
     color: #42ab9e;
     font-size: 30px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+    cursor: pointer;
+    margin
+ }.next-button{
+    height: 30px;
+    color: #42ab9e;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin
 
  }
+
 
 #s-services {
     padding: 96px 48px;
