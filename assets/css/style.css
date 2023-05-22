@@ -772,7 +772,8 @@ header .grid-layout nav .nav-list li a:hover {
     font-size: 30px;
     color:white ;
     font-weight: bold ;
-};
+}
+
   .repo-card {
     flex-basis: calc(100% - 20px);
     transition: 3s all ease;
@@ -831,7 +832,7 @@ header .grid-layout nav .nav-list li a:hover {
     padding: 5px 8px;
     margin-bottom:2px;
     border-radius: 8px;
-  };
+  }
   .small-repo-card-1{
     padding-top: 10px;
     border: 1px solid white;
@@ -856,6 +857,8 @@ header .grid-layout nav .nav-list li a:hover {
   .display-mobile{
     display: none;
   }
+
+
   .small-repo-card a{
     display: none;
 
