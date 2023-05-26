@@ -92,7 +92,7 @@ header.hidden{
 }
 @media screen and (max-width: 350px) {
     a.repo-button{
-        width: 40%;
+        width: 80px;
     }
 .repo-card{
     width: 300px;
