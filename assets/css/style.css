@@ -98,8 +98,7 @@ header.hidden{
     width: 300px;
 }
 .buttons{
-    
-    max-width: 300px;
+    max-width: 250px;
 }
 .prev-button{
     height: 30px;
@@ -107,7 +106,7 @@ header.hidden{
     font-size: 30px;
     text-align: center;
     cursor: pointer;
-    padding-right: 240px;
+    padding-right: 150px;
 
 }
 }    
