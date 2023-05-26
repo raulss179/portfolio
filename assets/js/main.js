@@ -10,46 +10,12 @@ typeWrite(document.querySelector(".typewriter"));
 
 hoverChangeExperience(
   ".digitalhouse",
-  `Trabalhei como instrutor conteudista em frontend na
-  Digital House, o trabalho consistia em criar conteúdos para as
-  aulas de especialização frontend. Alguns temas dos conteúdos
-  realizados foram: React, Redux, TypeScript, Testes,
-  GraphQL, Next.js, MUI, React Hook Form e styled-components.`,
+  `Colaborei com colegas no desenvolvimento de páginas web, usando habilidades front-end como HTML, CSS e JavaScript. Utilizei frameworks populares e trabalhei em equipe, compartilhando conhecimentos e resolvendo problemas. Mantive o código organizado usando Git e garanti a qualidade das aplicações por meio de testes e depuração.
+  `,
   "Professor conteudista em Frontend",
   "Digital House",
   "Nov 2021 - Nov 2022 (1 ano)"
-);
-
-hoverChangeExperience(
-  ".zuplae",
-  `Trabalhei como Social Media e Designer na Zuplae que é um escola
-  de programação, onde teve como foco as criações de conteúdos sobre
-  programação para a comunidade dev através das redes sociais.`,
-  "Social Media e UI Designer",
-  "Zuplae",
-  "Jan 2022 - Abril 2022 (4 meses)"
-);
-
-hoverChangeExperience(
-  ".codigofontetv",
-  `Trabalhei como Social Media e Designer no Código Fonte TV, 
-  onde teve como foco as criações de conteúdos sobre programação 
-  para a comunidade dev através das redes sociais.`,
-  "Social Media e Designer",
-  "Código Fonte TV",
-  "Jun 2021 - Jan 2022 (8 meses)"
-);
-
-hoverChangeExperience(
-  ".contweb",
-  `Realizei o estágio na ContWeb, uma empresa de contabilidade. 
-  Onde pela primeira vez tive experiência com o React. Além do
-  desenvolvimento frontend criei os designs da nova plataforma da empresa.`,
-  "Developer frontend e UI Designer",
-  "ContWeb",
-  "Set 2021 - Nov 2021 (3 meses)"
-);
-
+)
 hoverChangeDescription(
   ".html",
   "HTML é uma linguagem de marcação, onde marcamos os elementos para definir quais informações a página vai exibir."

@@ -42,7 +42,7 @@ button:focus, input:focus {
 
 body {
     font-family: "Archivo";
-    background-color: #fff;
+    background-color: #111;
     overflow-x: hidden
 }
 
@@ -92,7 +92,7 @@ header.hidden{
 }
 @media screen and (max-width: 350px) {
 .repo-card{
-    display:inline-block;
+    width: 300px;
 }
     
 }
@@ -286,17 +286,17 @@ header .grid-layout nav .nav-list li a:hover {
     line-height: 140%;
     font-size: 4rem;
     font-weight: 500
-};
+}
 
 @media screen and (max-width: 992px) {
     #s-home .grid-layout #home #home-container-text h1 {
-        font-size: 3.2rem;
+        font-size: 3.2rem
     }
-};
+}
 
 #s-home .grid-layout #home #home-container-text h1 span {
     color: #986dff
-};
+}
 
 #s-home .grid-layout #home #home-container-text p {
     color: #9ca3af;
@@ -304,8 +304,8 @@ header .grid-layout nav .nav-list li a:hover {
     max-width: 600px;
     margin: 40px 0px;
     font-weight: 300;
-    line-height: 160%;
-};
+    line-height: 160%
+}
 
 #s-home .grid-layout #home #home-container-text a {
     background: white;
@@ -321,12 +321,12 @@ header .grid-layout nav .nav-list li a:hover {
     transition: all .4s ease;
     margin-top: 30px;
     font-size: 18px;
-    font-weight: 400;
-};
+    font-weight: 400
+}
 
 #s-home .grid-layout #home #home-container-text a:hover {
     padding: 20px 45px;
-    max-width: 270px;
+    max-width: 270px
 }
 
 #s-home .grid-layout #home #logo {
@@ -337,6 +337,11 @@ header .grid-layout nav .nav-list li a:hover {
 }
 
 @media screen and (max-width: 1200px) {
+    .skills-text h2{
+        height: 200px;
+        margin: 0;
+        padding: 0;
+    }
     #s-home .grid-layout #home #logo {
         display: none
     }
@@ -402,7 +407,7 @@ header .grid-layout nav .nav-list li a:hover {
 
 #s-about .grid-layout>div #creator-photo h3 {
     color: #111;
-    background-color: #fff;
+    background-color: #111;
     padding: 8px;
     border-radius: 16px;
     width: 180px;
@@ -773,25 +778,30 @@ header .grid-layout nav .nav-list li a:hover {
     color:white ;
     font-weight: bold ;
 }
+.repo-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 
   .repo-card {
-    flex-basis: calc(100% - 20px);
+    background-image: linear-gradient(to right, transparent, #056156, transparent), linear-gradient(to left, transparent, #056156, transparent);
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+    flex-basis: calc(100% - 600px);
     transition: 3s all ease;
-    background:transparent;
     color:white ;
     border-radius: 8px;
-    flex-direction: row ;
-    justify-content:scenter;
     word-wrap: break-word;
     text-align: center;
-    width: 260px;
     transform: translate(0);
     overflow: hidden;
     height: 450px;
     margin: 20px 5px !important;
-    display: inline-block;
     padding: 10px;
-    border: 3px solid #42AB9E;
+    border:none;
     margin-bottom: 10px;
   }
   .repo-card::before {
@@ -834,23 +844,31 @@ header .grid-layout nav .nav-list li a:hover {
     border-radius: 8px;
   }
   .small-repo-card-1{
+    background-image: linear-gradient(to left, transparent, rgb(158, 158, 23));
+    padding-right: 40px;
+    padding-left: 20px;
     padding-top: 10px;
-    border: 1px solid white;
+    border: 1px solid;
+    border-image: linear-gradient(to left, transparent, rgb(145, 145, 20)) 0 100%;
+    border: none;
     width: 300px;
     border-radius: 8px;
     height: 350px;
-    margin-top: 110px;
     margin-right: -40px;
-    background: linear-gradient(to left);
+    color: white;
 
   } 
   .small-repo-card{
+    padding-left: 40px;
+    padding-right: 20px;
+    border:none;
+    background-image: linear-gradient(to right, transparent, rgb(158, 158, 23));
+    border-image: linear-gradient(to right, transparent, rgb(180, 180, 10)) 0 100%;
+    color: white;
     padding-top: 10px;
-    border: 2px solid white;
     width: 300px;
     border-radius: 8px;
     height: 350px;
-    margin-top: 110px;
     margin-left: -40px;
 
   } 
@@ -874,7 +892,18 @@ header .grid-layout nav .nav-list li a:hover {
     font-size: 15px;
   }
   @media screen and (max-width:650px){
-    .small-repo-card{ display: none;
+    .repo-container{
+        display:block;
+    }
+    .repo-card{
+        display: inline-block;
+    width: 80% !important}
+    .repo-card::before{
+        display: none;
+    }
+
+    .small-repo-card{ 
+        display: none;
 
     }
     .small-repo-card-1{ display: none;
@@ -953,6 +982,12 @@ header .grid-layout nav .nav-list li a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    .repo-container{
+        display: block;
+    }
+    .small-repo-card,.small-repo-card-1{
+        display: none;
+    }
     #s-services .grid-layout #services article {flex-basis: calc(100% - 20px)
         
     }
@@ -989,6 +1024,9 @@ header .grid-layout nav .nav-list li a:hover {
         padding: 48px 24px
     }
 }
+.repo-card{
+    flex-basis: calc(100% - 300px);
+}
 
 #s-skills .grid-layout #skills {
     display: flex;
@@ -1010,7 +1048,7 @@ header .grid-layout nav .nav-list li a:hover {
 }
 
 #s-skills .grid-layout #skills #skills-text {
-    min-height: 400px
+    min-height: 200px
 }
 
 @media screen and (max-width: 768px) {
