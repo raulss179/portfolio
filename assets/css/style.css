@@ -286,17 +286,17 @@ header .grid-layout nav .nav-list li a:hover {
     line-height: 140%;
     font-size: 4rem;
     font-weight: 500
-}
+};
 
 @media screen and (max-width: 992px) {
     #s-home .grid-layout #home #home-container-text h1 {
-        font-size: 3.2rem
+        font-size: 3.2rem;
     }
-}
+};
 
 #s-home .grid-layout #home #home-container-text h1 span {
     color: #986dff
-}
+};
 
 #s-home .grid-layout #home #home-container-text p {
     color: #9ca3af;
@@ -304,8 +304,8 @@ header .grid-layout nav .nav-list li a:hover {
     max-width: 600px;
     margin: 40px 0px;
     font-weight: 300;
-    line-height: 160%
-}
+    line-height: 160%;
+};
 
 #s-home .grid-layout #home #home-container-text a {
     background: white;
@@ -321,12 +321,12 @@ header .grid-layout nav .nav-list li a:hover {
     transition: all .4s ease;
     margin-top: 30px;
     font-size: 18px;
-    font-weight: 400
-}
+    font-weight: 400;
+};
 
 #s-home .grid-layout #home #home-container-text a:hover {
     padding: 20px 45px;
-    max-width: 270px
+    max-width: 270px;
 }
 
 #s-home .grid-layout #home #logo {
@@ -890,26 +890,23 @@ header .grid-layout nav .nav-list li a:hover {
     font-size: 30px;
     text-align: center;
     cursor: pointer;
-    margin
+
  }.next-button{
     height: 30px;
     color: #42ab9e;
     font-size: 30px;
     text-align: center;
     cursor: pointer;
-    margin
-
- }
-
+ };
 
 #s-services {
     padding: 96px 48px;
-    background-color: #151515
-}
+    background-color: #151515;
+};
 
 @media screen and (max-width: 992px) {
     #s-services {
-        padding: 48px 24px
+        padding: 48px 24px;
     }
 }
 
@@ -918,7 +915,7 @@ header .grid-layout nav .nav-list li a:hover {
     padding-bottom: 24px;
     color: #fff;
     font-size: 4rem;
-    font-weight: 500
+    font-weight: 500;
 }
 
 #s-services .grid-layout h2 span {
