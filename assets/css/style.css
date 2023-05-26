@@ -813,7 +813,7 @@ header .grid-layout nav .nav-list li a:hover {
     overflow: hidden;
     height: 450px;
     margin: 20px 5px !important;
-    padding: 10px;
+    padding: 10px 80px;
     border:none;
     margin-bottom: 10px;
   }
@@ -846,8 +846,11 @@ header .grid-layout nav .nav-list li a:hover {
     margin-bottom: 50px;
     height: 270px;
   }
+  
+  
 
   a.repo-button{
+    z-index: 99999;
     font-size:20px;
     border: 2px solid #866BEA;
     text-decoration: none;
@@ -859,7 +862,7 @@ header .grid-layout nav .nav-list li a:hover {
   .small-repo-card-1{
     background-image: linear-gradient(to left, transparent, rgb(158, 158, 23));
     padding-right: 60px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-top: 10px;
     border: 1px solid;
     border-image: linear-gradient(to left, transparent, rgb(145, 145, 20)) 0 100%;
@@ -872,8 +875,8 @@ header .grid-layout nav .nav-list li a:hover {
 
   } 
   .small-repo-card{
-    padding-left: 60px;
-    padding-right: 20px;
+    padding-left: 80px;
+    padding-right: 10px;
     border:none;
     background-image: linear-gradient(to right, transparent, rgb(158, 158, 23));
     border-image: linear-gradient(to right, transparent, rgb(180, 180, 10)) 0 100%;
@@ -904,6 +907,8 @@ header .grid-layout nav .nav-list li a:hover {
     color: wheat;
     font-size: 15px;
   }
+
+  
   @media screen and (max-width:650px){
     .repo-container{
         display:block;
@@ -947,7 +952,7 @@ header .grid-layout nav .nav-list li a:hover {
     font-size: 30px;
     text-align: center;
     cursor: pointer;
-    padding-right: 390px;
+    padding-right: 400px;
 
  }.next-button{
     height: 30px;

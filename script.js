@@ -95,28 +95,28 @@ fetch(url)
     function createRepoCard(repo, cardClass) {
       const repoCard = document.createElement('div');
       repoCard.classList.add(cardClass);
-
+    
       const repoName = document.createElement('h3');
       repoName.classList.add('repo-name');
       repoName.textContent = repo.name;
-
+    
       const repoDesc = document.createElement('p');
       repoDesc.classList.add('repo-description');
-      repoDesc.textContent = repo.description;
-
+      repoDesc.textContent = repo.description.slice(0, 100); // Exibe apenas os primeiros 100 caracteres
+    
       const repoButton = document.createElement('a');
       repoButton.classList.add('repo-button');
       repoButton.href = repo.html_url;
-      repoButton.textContent = "Visitar Repositório";
+      repoButton.textContent = "Visualizar Repositório";
       repoButton.target = "_blank";
-
+    
       repoCard.appendChild(repoName);
       repoCard.appendChild(repoDesc);
-      repoCard.appendChild(repoButton);
-
+      repoCard.appendChild(repoButton); // Adiciona o botão abaixo do título e da descrição
+    
       return repoCard;
     }
-
+    
     function showNextRepo() {
       currentRepoIndex = (currentRepoIndex + 1) % filteredData.length; // Incrementa o índice considerando o tamanho do array
       displayRepos();
@@ -132,9 +132,9 @@ fetch(url)
 
     prevButton.addEventListener('click', showPreviousRepo);
     nextButton.addEventListener('click', showNextRepo);
-    
+
     displayRepos();
   })
   .catch(error => {
     console.error("Erro ao obter os repositórios do GitHub:", error);
-  })
+  });
