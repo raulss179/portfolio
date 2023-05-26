@@ -774,6 +774,7 @@ header .grid-layout nav .nav-list li a:hover {
 .Rep-git{
     transition: 3s all ease-in-out;
     margin-top: 60px;
+    margin-bottom: 30px;
     font-size: 30px;
     color:white ;
     font-weight: bold ;
@@ -790,7 +791,7 @@ header .grid-layout nav .nav-list li a:hover {
     background-image: linear-gradient(to right, transparent, #056156, transparent), linear-gradient(to left, transparent, #056156, transparent);
     background-position: left center, right center;
     background-repeat: no-repeat;
-    flex-basis: calc(100% - 600px);
+    flex-basis: calc(100% - 620px);
     transition: 3s all ease;
     color:white ;
     border-radius: 8px;
@@ -836,7 +837,7 @@ header .grid-layout nav .nav-list li a:hover {
 
   a.repo-button{
     font-size:20px;
-    border: 2px solid #42ab9e;
+    border: 2px solid #866BEA;
     text-decoration: none;
     color: #42ab9e;
     padding: 5px 8px;
@@ -845,13 +846,13 @@ header .grid-layout nav .nav-list li a:hover {
   }
   .small-repo-card-1{
     background-image: linear-gradient(to left, transparent, rgb(158, 158, 23));
-    padding-right: 40px;
+    padding-right: 60px;
     padding-left: 20px;
     padding-top: 10px;
     border: 1px solid;
     border-image: linear-gradient(to left, transparent, rgb(145, 145, 20)) 0 100%;
     border: none;
-    width: 300px;
+    width: 310px;
     border-radius: 8px;
     height: 350px;
     margin-right: -40px;
@@ -859,14 +860,14 @@ header .grid-layout nav .nav-list li a:hover {
 
   } 
   .small-repo-card{
-    padding-left: 40px;
+    padding-left: 60px;
     padding-right: 20px;
     border:none;
     background-image: linear-gradient(to right, transparent, rgb(158, 158, 23));
     border-image: linear-gradient(to right, transparent, rgb(180, 180, 10)) 0 100%;
     color: white;
     padding-top: 10px;
-    width: 300px;
+    width: 310px;
     border-radius: 8px;
     height: 350px;
     margin-left: -40px;
@@ -886,7 +887,7 @@ header .grid-layout nav .nav-list li a:hover {
   };
   
   .repo-description {
-    margin-top: 15px;
+    margin-top: 5px;
     font-style: italic;
     color: wheat;
     font-size: 15px;
@@ -910,19 +911,35 @@ header .grid-layout nav .nav-list li a:hover {
 
     }
   } 
-    
+.buttons{
+    flex-basis: calc(100% - 300px);
+    display:flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3333;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    ;
+}
   
  .prev-button{
-    margin-top: 40px;
     height: 30px;
-    color: #42ab9e;
+    color: #866BEA;
     font-size: 30px;
     text-align: center;
     cursor: pointer;
+    padding-right: 390px;
 
  }.next-button{
     height: 30px;
-    color: #42ab9e;
+    color: #866BEA;
     font-size: 30px;
     text-align: center;
     cursor: pointer;

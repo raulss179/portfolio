@@ -132,6 +132,7 @@ fetch(url)
 
     prevButton.addEventListener('click', showPreviousRepo);
     nextButton.addEventListener('click', showNextRepo);
+    
 
     displayRepos();
   })
