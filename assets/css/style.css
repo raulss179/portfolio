@@ -95,10 +95,15 @@ header.hidden{
     width: 300px;
 }
 .prev-button{
-    padding-right: 310px;
+    height: 30px;
+    color: #866BEA;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    padding-right: 300px;
 }
-}
-header .grid-layout nav {
+}    
+    header .grid-layout nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
