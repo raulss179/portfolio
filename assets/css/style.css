@@ -94,7 +94,10 @@ header.hidden{
 .repo-card{
     width: 300px;
 }
-    
+.prev-button{
+   
+    padding-right: 340px;
+}
 }
 header .grid-layout nav {
     display: flex;
