@@ -85,10 +85,35 @@ header.hidden{
         padding: 0px 24px
     }
 }
+@media screen and (max-width: 475px) {
+    a.repo-button{
+        font-size: 10px !important;
+        position: absolute;
+    }
+    }
+
 @media screen and (max-width: 500px) {
 .edit nav a i{
     font-size: 15px;
 }
+.small-repo-card{
+    display: none;
+}
+.prev-button{
+    text-align: center;
+    cursor: pointer;
+    padding-right: 250px !important;
+}
+.repo-button{
+    z-index: 99999;
+    font-size:12px !important;
+    border: 2px solid #866BEA;
+    text-decoration: none;
+    color: #42ab9e;
+    padding: 5px 8px;
+    margin-bottom:2px;
+    border-radius: 8px;
+  }
 }
 @media screen and (max-width: 350px) {
     .repo-button{
@@ -102,14 +127,11 @@ header.hidden{
     max-width: 250px;
 }
 .prev-button{
-    height: 30px;
-    color: #866BEA;
-    font-size: 30px;
     text-align: center;
     cursor: pointer;
-    padding-right: 150px;
-
+    padding-right: 150px !important;
 }
+
 }    
     header .grid-layout nav {
     display: flex;
@@ -137,12 +159,6 @@ header .grid-layout nav .nav-list {
 header .grid-layout nav .nav-list li {
     margin-left: 48px
 }
-@media screen and (max-width: 500px) {
-    .small-repo-card{
-        display: none;
-    }
-}
-
 
 @media screen and (max-width: 992px) {
     header .grid-layout nav .nav-list li {

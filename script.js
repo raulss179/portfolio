@@ -107,7 +107,7 @@ fetch(url)
       const repoButton = document.createElement('a');
       repoButton.classList.add('repo-button');
       repoButton.href = repo.html_url;
-      repoButton.textContent = "Visualizar Repositório";
+      repoButton.textContent = "Ver Repositório";
       repoButton.target = "_blank";
     
       repoCard.appendChild(repoName);
