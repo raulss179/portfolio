@@ -409,7 +409,7 @@ header .grid-layout nav .nav-list li a:hover {
 
 #s-about .grid-layout>div #creator-photo {
     width: 47%;
-    background-image: url("../image/foto-iuricode.svg");
+    background-image: url("../image/raulperfil.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -419,25 +419,27 @@ header .grid-layout nav .nav-list li a:hover {
 
 @media screen and (max-width: 1200px) {
     #s-about .grid-layout>div #creator-photo {
-        width: 100%;
-        height: 400px
+        width: 75%;
+        height: 600px;
+        margin-left: 12.5%;
     }
 }
 
 @media screen and (max-width: 992px) {
     #s-about .grid-layout>div #creator-photo {
-        height: 350px
+        height: 500px;
+        width:75%;
     }
 }
 
 @media screen and (max-width: 768px) {
     #s-about .grid-layout>div #creator-photo {
-        height: 300px
+        height: 500px
     }
 }
 
 #s-about .grid-layout>div #creator-photo h3 {
-    color: #111;
+    color: white;
     background-color: #111;
     padding: 8px;
     border-radius: 16px;
