@@ -1,0 +1,51 @@
+.header {
+    padding: 24px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-list a:hover {
+    color: var(--text);
+}
+
+.whatsapp {
+    transition: background-color 0.3 ease, ;
+    background-color: #1C57DF;
+    padding: 15px 10px;
+    border-radius: 5px;
+    transition: border 0.3 ease;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(7, 15, 36, .7);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
