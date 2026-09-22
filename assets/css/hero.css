@@ -1,0 +1,732 @@
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero .container {
+            height: min-content;
+            display: flex;
+            position: relative;
+        }
+        
+        .hero-tag {
+            position: relative;
+            width: 100%;
+            color: var(--primary);
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-top: 11%;
+        }
+        
+        .hero-tag h1 {
+            color: #2A14C3;
+            margin-top: 2px;
+            font-size: 4.2rem;
+            text-shadow: 2px 2px black, 0 0 var(--primary);
+        }
+        
+        .hero-tag span {
+            color: white;
+        }
+        
+        .hero-tag h2 {
+            font-size: 28px;
+            color: #2A14C3;
+            margin-top: 30px;
+            color: (--muted);
+            font-weight: 500;
+        }
+        
+        .hero-tag p {
+            padding-bottom: 60px;
+            line-height: 1.8;
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 18px;
+        }
+        
+        .hero-tag h3 {
+            padding-top: 10%;
+            color: white;
+            max-width: 70%;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn-primary,
+        .btn-secondary {
+            text-decoration: none;
+            padding: 16px 28px;
+            border-radius: 10px;
+            transition: .3s;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            border: 1px solid #334155;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #1E293B;
+        }
+        /* botão de dowload do curriculo e chamado para ver projetos */
+        
+        .chamados {
+            margin-top: 15%;
+            display: flexbox;
+            flex-direction: row;
+            vertical-align: middle;
+        }
+        
+        .chamados a {
+            font-size: 16px;
+            padding: 10px 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid #1C57DF;
+            margin: 0 15px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            opacity: 0.6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .chamados a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(127, 0, 255, 0.4);
+            opacity: 1.0;
+        }
+        
+        .chamados a:active {
+            transform: translateY(-1px);
+        }
+        
+        .chamados span {
+            vertical-align: middle;
+        }
+        /* imagem de perfil ao lado do texto principal */
+        
+        .imagemfundo {
+            position: relative;
+            display: inline-block;
+            border-radius: 16px;
+        }
+        
+        .imagemfundo::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            /* Controla o tamanho do brilho/degradê em volta da imagem */
+            z-index: -1;
+            /* Coloca o degradê atrás da imagem PNG */
+            background: linear-gradient(10deg, #0C1399, #060952, #021146);
+            /* As cores do seu degradê */
+            border-radius: 30%;
+            /* Use '50%' se a foto for redonda, ou '0' se for quadrada */
+            filter: blur(100px);
+            /* Intensidade do desfoque do degradê */
+        }
+        
+        .imagemperfil {
+            display: block;
+            border-radius: 10px;
+            width: 100%;
+            position: relative;
+            padding-top: 22%;
+            z-index: 888;
+            -webkit-mask-image: linear-gradient(black, transparent);
+            mask-image: linear-gradient(to bottom, black 80%, transparent);
+        }
+        
+        .baseperfil {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: 20%;
+            left: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0.5;
+        }
+        
+        .baseperfil img {
+            overflow: hidden;
+            width: 120%;
+            -webkit-mask-image: linear-gradient(black, transparent);
+            mask-image: linear-gradient (black, transparent);
+        }
+        /* fim do trato das imagens do projeto */
+        /* carrosel configuraçoes*/
+        /* ============================================================
+        /* ------------------------------------------------------------
+   ETAPA 1 — Variáveis de configuração
+   Mude só aqui para alterar o comportamento visual.
+   --slides-visiveis: quantos PNGs aparecem ao mesmo tempo.
+     Esse número TAMBÉM é lido pelo JavaScript para saber
+     de quanto em quanto ele deve deslizar.
+   ------------------------------------------------------------ */
+        
+        .carrosel {
+            --slides-visiveis: 4;
+            /* itens visíveis no desktop */
+            --espaco: 15px;
+            /* respiro entre os PNGs */
+            --altura-png: 130px;
+            /* altura máxima de cada PNG */
+            --duracao: 0.6s;
+            /* tempo da animação de deslize */
+            --curva: cubic-bezier(0.4, 0.02, 0.2, 1);
+            /* aceleração do deslize */
+            --cor-destaque: #61dafb;
+            /* cor de setas ativas e indicadores */
+            --borda: rgba(255, 255, 255, 0.1);
+            position: relative;
+            /* base para posicionar as setas */
+            padding: 0 8px;
+        }
+        /* Responsivo: menos PNGs visíveis conforme a tela diminui.
+   O JS recalcula sozinho quando a janela muda de tamanho. */
+        
+        @media (max-width: 900px) {
+            .carrosel {
+                --slides-visiveis: 3;
+                --altura-png: 110px;
+            }
+        }
+        
+        @media (max-width: 620px) {
+            .carrosel {
+                --slides-visiveis: 2;
+                --altura-png: 96px;
+            }
+        }
+        /* ------------------------------------------------------------
+   ETAPA 2 — A "janela" (viewport)
+   É o recorte fixo que mostra só uma parte da fila de slides.
+   overflow: hidden é o que esconde o resto.
+   ------------------------------------------------------------ */
+        
+        .carrosel-slides {
+            overflow: hidden;
+            /* corta o que passa da janela */
+            border-radius: 16px;
+            border: 1px solid var(--borda);
+            background: rgba(255, 255, 255, 0.02);
+            cursor: grab;
+            /* dica visual de "pode arrastar" */
+            touch-action: pan-y;
+            /* no celular: rolar vertical continua livre */
+        }
+        
+        .carrosel-slides.arrastando {
+            cursor: grabbing;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 3 — A fila de slides (o "trilho")
+   display: flex coloca todos os .slide em UMA linha horizontal.
+   O JS move este elemento com transform: translateX(...).
+   ------------------------------------------------------------ */
+        
+        .slide-active {
+            display: flex;
+            transition: transform var(--duracao) var(--curva);
+            will-change: transform;
+            /* avisa o navegador: vai animar */
+        }
+        /* Enquanto o dedo/mouse está arrastando, desligamos a transição
+   para o movimento acompanhar o cursor em tempo real. */
+        
+        .slide-active.sem-animacao {
+            transition: none;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 4 — Cada slide
+   flex: 0 0 calc(100% / N)  →  cada slide ocupa exatamente
+   1/N da janela, sem encolher (0 0) e sem crescer.
+   ------------------------------------------------------------ */
+        
+        .slide {
+            flex: 0 0 calc(100% / var(--slides-visiveis));
+            display: grid;
+            place-items: center;
+            /* centraliza o PNG no slide */
+            padding: 32px var(--espaco);
+            box-sizing: border-box;
+        }
+        /* PNG transparente: object-fit: contain nunca corta a imagem. */
+        
+        .slide img {
+            display: block;
+            width: 100%;
+            height: var(--altura-png);
+            object-fit: contain;
+            user-select: none;
+            /* evita "selecionar" a imagem no arraste */
+            -webkit-user-drag: none;
+            filter: grayscale(0.1);
+            /* efeito: cinza… */
+            opacity: 0.55;
+            transition: filter 0.35s var(--curva), opacity 0.35s var(--curva), transform 0.35s var(--curva);
+        }
+        /* …e volta a cor no hover. Apague estas 4 linhas se quiser
+   os PNGs sempre coloridos. */
+        
+        .slide:hover img {
+            filter: none;
+            opacity: 1;
+            transform: translateY(-4px) scale(1.04);
+        }
+        /* ------------------------------------------------------------
+   ETAPA 5 — Setas de navegação
+   O JavaScript cria estes botões; aqui só damos aparência.
+   ------------------------------------------------------------ */
+        
+        .carrosel-seta {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--borda);
+            border-radius: 50%;
+            background: rgba(12, 14, 18, 0.75);
+            backdrop-filter: blur(6px);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s var(--curva), color 0.2s var(--curva), opacity 0.2s var(--curva);
+        }
+        
+        .carrosel-seta:hover {
+            background: var(--cor-destaque);
+            color: #06222b;
+        }
+        
+        .carrosel-seta svg {
+            width: 19px;
+            height: 19px;
+        }
+        
+        .carrosel-seta--anterior {
+            left: -6px;
+        }
+        
+        .carrosel-seta--proxima {
+            right: -6px;
+        }
+        /* Seta desativada = chegou na ponta (só quando o loop está desligado) */
+        
+        .carrosel-seta[disabled] {
+            opacity: 0.25;
+            cursor: default;
+        }
+        
+        .carrosel-seta[disabled]:hover {
+            background: rgba(12, 14, 18, 0.75);
+            color: #fff;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 6 — Indicadores (bolinhas) e contador
+   ------------------------------------------------------------ */
+        
+        .carrosel-rodape {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+        
+        .carrosel-ponto {
+            width: 22px;
+            height: 5px;
+            padding: 0;
+            border: 0;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: background 0.25s var(--curva), width 0.25s var(--curva);
+        }
+        
+        .carrosel-ponto:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .carrosel-ponto.ativo {
+            width: 40px;
+            background: var(--cor-destaque);
+        }
+        /* Foco visível pelo teclado (acessibilidade) */
+        
+        .carrosel-seta:focus-visible,
+        .carrosel-ponto:focus-visible,
+        .carrosel:focus-visible {
+            outline: 2px solid var(--cor-destaque);
+            outline-offset: 3px;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 7 — Acessibilidade: quem pediu menos animação no
+   sistema não recebe deslize animado nem autoplay (o JS
+   também lê essa preferência).
+   ------------------------------------------------------------ */
+        
+        @media (prefers-reduced-motion: reduce) {
+            .slide-active {
+                transition: none;
+            }
+            .slide img {
+                transition: none;
+            }
+        }
+        /* Sessão Sobre Mim */
+        /* ============================================================
+   SOBRE.CSS — seção "Sobre mim" com foco em vagas WordPress
+   Estrutura: .sobre > .sobre-grid (texto + foto) > .sobre-numeros
+              > .sobre-cards > .sobre-cta
+   ============================================================ */
+        /* ------------------------------------------------------------
+   ETAPA 1 — Tokens visuais da seção
+   ------------------------------------------------------------ */
+        /* Ficam no :root para valerem também no cabeçalho e no rodapé,
+   fora da seção .sobre (o botão de idioma usa a cor de destaque). */
+        
+         :root {
+            --tinta: #e9edf2;
+            --apagado: #98a2b0;
+            --linha: rgba(255, 255, 255, 0.1);
+            --destaque: #61dafb;
+            /* troque pela cor do seu portfólio */
+            --raio: 16px;
+        }
+        
+        .sobre {
+            margin-left: 2%;
+            margin-right: 2%;
+            padding: clamp(56px, 8vw, 104px) 0;
+            color: var(--tinta);
+        }
+        
+        .sobre .rotulo {
+            margin: 0 0 14px;
+            font-size: 12.5px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--apagado);
+        }
+        /* ------------------------------------------------------------
+   ETAPA 2 — Grid principal: texto à esquerda, foto à direita.
+   No celular vira uma coluna só (a foto vai para o fim).
+   ------------------------------------------------------------ */
+        
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.85fr;
+            gap: clamp(28px, 5vw, 56px);
+            align-items: start;
+        }
+        
+        @media (max-width: 780px) {
+            .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+            .sobre-foto {
+                order: -1;
+            }
+            /* no celular a foto aparece primeiro */
+        }
+        /* Frase de posicionamento: a primeira coisa que a pessoa lê.
+   Curta, específica, com UMA palavra destacada. */
+        
+        .sobre-titulo {
+            margin: 0 0 18px;
+            font-size: clamp(26px, 3.6vw, 38px);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            font-weight: 700;
+        }
+        
+        .sobre-titulo em {
+            font-style: normal;
+            color: var(--destaque);
+        }
+        /* max-width em ch limita a linha para leitura confortável */
+        
+        .sobre-texto p {
+            margin: 0 0 14px;
+            max-width: 60ch;
+            color: #c4ccd6;
+            font-size: 16.5px;
+            line-height: 1.65;
+        }
+        
+        .sobre-texto p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .sobre-texto strong {
+            color: var(--tinta);
+            font-weight: 600;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 3 — Foto
+   O bloco pontilhado é só o lugar reservado: troque pela sua
+   foto real (WebP, ~150 KB, rosto visível, fundo simples).
+   ------------------------------------------------------------ */
+        
+        .sobre-foto {
+            position: relative;
+            border-radius: var(--raio);
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--linha);
+            background: radial-gradient(120% 80% at 70% 0%, rgba(97, 218, 251, 0.12), transparent 60%), rgba(255, 255, 255, 0.02);
+        }
+        
+        .sobre-foto img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Lugar reservado (apague quando colocar a foto) */
+        
+        .sobre-foto .reservado {
+            position: absolute;
+            inset: 14px;
+            display: grid;
+            place-items: center;
+            align-content: center;
+            /* mantém os dois textos juntos no meio */
+            gap: 6px;
+            border: 1px dashed rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            color: var(--apagado);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .sobre-foto .reservado b {
+            color: var(--tinta);
+            font-size: 14px;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 4 — Números: prova rápida, sem barras de progresso.
+   ------------------------------------------------------------ */
+        
+        .sobre-numeros {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 30px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        @media (max-width: 520px) {
+            .sobre-numeros {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .sobre-numeros li {
+            padding: 16px 18px;
+            border: 1px solid var(--linha);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.015);
+        }
+        
+        .sobre-numeros b {
+            display: block;
+            font-size: 22px;
+            letter-spacing: -0.02em;
+            margin-bottom: 2px;
+        }
+        
+        .sobre-numeros span {
+            color: var(--apagado);
+            font-size: 13.5px;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 5 — Cards "como eu trabalho": o que você entrega,
+   escrito com as palavras que aparecem nos anúncios de vaga.
+   ------------------------------------------------------------ */
+        
+        .sobre-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 44px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .sobre-cards li {
+            padding: 20px;
+            border: 1px solid var(--linha);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.015);
+        }
+        
+        .sobre-cards h3 {
+            margin: 0 0 8px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        .sobre-cards p {
+            margin: 0;
+            color: var(--apagado);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 6 — Chamada para ação
+   ------------------------------------------------------------ */
+        
+        .sobre-cta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 44px;
+            padding-top: 30px;
+            border-top: 1px solid var(--linha);
+        }
+        
+        .sobre-botao {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--linha);
+            color: var(--tinta);
+            text-decoration: none;
+            font-size: 14.5px;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        
+        .sobre-botao:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+        
+        .sobre-botao svg {
+            width: 17px;
+            height: 17px;
+        }
+        /* Botão principal: só UM por seção */
+        
+        .sobre-botao--principal {
+            background: var(--destaque);
+            border-color: var(--destaque);
+            color: #06222b;
+            font-weight: 600;
+        }
+        
+        .sobre-botao--principal:hover {
+            background: #7ee6f7;
+            border-color: #7ee6f7;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 7 — Botão de idioma PT / EN
+   Importante para vaga internacional: o recrutador precisa ler
+   o seu texto em inglês sem instalar tradutor.
+   ------------------------------------------------------------ */
+        
+        .idioma {
+            display: inline-flex;
+            gap: 4px;
+            padding: 4px;
+            border: 1px solid var(--linha);
+            border-radius: 999px;
+        }
+        
+        .idioma button {
+            padding: 5px 12px;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: var(--apagado);
+            font: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        
+        .idioma button[aria-pressed="true"] {
+            background: var(--destaque);
+            color: #06222b;
+            font-weight: 600;
+        }
+        
+         :where(.sobre-botao, .idioma button):focus-visible {
+            outline: 2px solid var(--destaque);
+            outline-offset: 3px;
+        }
+        /* ------------------------------------------------------------
+   ETAPA 8 — Esteira da stack com texto (usa o carrosel.js)
+   A classe extra .carrosel--texto libera a largura fixa dos
+   slides, porque cada nome tem um tamanho diferente.
+   Carregue este arquivo DEPOIS do carrosel.css.
+   ------------------------------------------------------------ */
+        
+        .carrosel--texto .slide {
+            width: auto;
+            padding: 22px 10px;
+        }
+        
+        .carrosel--texto .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border: 1px solid var(--linha, rgba(255, 255, 255, .1));
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #dfe5ec;
+            font-size: 14.5px;
+            white-space: nowrap;
+            /* nunca quebra o nome em duas linhas */
+        }
+        
+        .carrosel--texto .chip i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--destaque, #61dafb);
+            flex: 0 0 auto;
+        }
+        /* No celular a foto vira mais baixa (3:2) para não empurrar o
+   texto para fora da primeira tela. */
+        
+        @media (max-width: 780px) {
+            .sobre-foto {
+                aspect-ratio: 3 / 2;
+            }
+        }
